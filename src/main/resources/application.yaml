@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: my-shop
+
+  mvc:
+    problemdetails:
+      enabled: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shop_demo
+    username: admin
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  docker:
+    compose:
+      lifecycle-management: start_only
+
+jwt:
+  secret-key: 0ysfedC/HX9yF1VyhESENls4FJowSRuQ8kFgjl8Esxedttk4rw8G29xyASIF2lGefB3HbJZnxJYN35teIugb/UCxefUvAdhJwFTkpUqWd9/fiiNboYEulNPMLBaQmj3odM2JOXE3tJfHnfKWQCkYjSV0U8Fc0ECU0Y8xhgaOv0GqprTuYYAMGRFrfH7w1eNP5QYDvww+lfiiI9sZ/Cjm2/KUdM0uXixtR0XNHglPkUynrDNx25PH1wMJXg2abSDuAfBqx1QXBtE86uvNJcuv2cXJiQQgbmXd1Wy5h4hXQ1kZc2faFe6HU47L0Nvuosr6A+Gt/B56ux/o9e2SLD+s/OuW5eXjaDYthL+wkkxEGzw+Lbcey0NtDxIfHQIDAQABAkEA00jevpp8Vh/VvfpQN61gvtg3wUmqY+bl7Bg/pJ4FgMUMOjsBgPSfRRx95vtSHOdPnzaeAoSVOgVMaYjDaw9p1QIhAP+tSP6sBT9ai5eXlK/mqpRJ/yRk3RNFVsbJjGvuG/1fAiEA8SAQZgbs0IWoyzI7adt/14qyVf5e9H1XhZ3GPqMsOQMCIF1Yb7kDJttNfH95CQD7jzWamns4E/qwKxFijlDtWuyzAiEA3ISWeriam5mhZTPrYkR8BoOx1TNtY+u9v1UrmN1h9EECIGPqVEytGEbd4fIkVIx+kfX2nzPFJp32f8SSLY7CgvDO
+  expiration-seconds: 3600
