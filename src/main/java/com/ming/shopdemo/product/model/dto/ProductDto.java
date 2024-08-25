@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 public record ProductDto(
     Long id,
     String name,
-    String imgUri,
     Integer stock,
     Integer price,
     String description,

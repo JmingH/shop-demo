@@ -1,5 +1,6 @@
 package com.ming.shopdemo.useraccount.model;
 
+import com.ming.shopdemo.cart.model.Cart;
 import com.ming.shopdemo.useraccount.model.constants.Role;
 import jakarta.persistence.*;
 import lombok.*;
@@ -52,6 +53,9 @@ public class UserAccount implements UserDetails {
     @LastModifiedDate
     @Column
     private LocalDateTime lastModifiedDateTime;
+
+    @OneToOne(mappedBy = "userAccount", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Cart cart;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -10,6 +10,7 @@ import com.ming.shopdemo.useraccount.model.mapper.UserAccountMapper;
 import com.ming.shopdemo.useraccount.repository.UserAccountRepository;
 import com.ming.shopdemo.useraccount.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,7 +27,6 @@ public class UserAccountServiceImpl implements UserAccountService {
     private final UserAccountMapper accountMapper;
 
     private final PasswordEncoder passwordEncoder;
-
 
     @Override
     public void createUserAccount(RegisterRequest request) {

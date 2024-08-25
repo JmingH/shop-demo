@@ -1,5 +1,6 @@
 package com.ming.shopdemo.product.model;
 
+import com.ming.shopdemo.cart.model.CartItem;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -7,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -41,4 +43,7 @@ public class Product {
     @LastModifiedDate
     @Column
     private LocalDateTime lastModifiedDateTime;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<CartItem> cartItem;
 }
