@@ -1,5 +1,6 @@
 package com.ming.shopdemo.auth.service.impl;
 
+import com.ming.shopdemo.auth.config.SecurityConfig;
 import com.ming.shopdemo.auth.dto.AuthDto;
 import com.ming.shopdemo.auth.service.AuthService;
 import com.ming.shopdemo.auth.service.JwtService;
