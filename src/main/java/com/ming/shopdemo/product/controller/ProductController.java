@@ -4,7 +4,6 @@ import com.ming.shopdemo.product.model.dto.CreateProductRequest;
 import com.ming.shopdemo.product.model.dto.EditProductRequest;
 import com.ming.shopdemo.product.model.dto.ProductDto;
 import com.ming.shopdemo.product.service.ProductService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

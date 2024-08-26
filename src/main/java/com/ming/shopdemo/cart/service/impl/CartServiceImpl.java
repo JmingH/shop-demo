@@ -3,7 +3,6 @@ package com.ming.shopdemo.cart.service.impl;
 import com.ming.shopdemo.cart.model.Cart;
 import com.ming.shopdemo.cart.model.CartItem;
 import com.ming.shopdemo.cart.model.dto.CartDto;
-import com.ming.shopdemo.cart.model.dto.CartItemDto;
 import com.ming.shopdemo.cart.model.mapper.CartMapper;
 import com.ming.shopdemo.cart.repository.CartItemRepository;
 import com.ming.shopdemo.cart.repository.CartRepository;

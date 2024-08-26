@@ -10,8 +10,6 @@ import com.ming.shopdemo.useraccount.model.mapper.UserAccountMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import java.util.Set;
-
 @Mapper(componentModel = "spring",
         unmappedTargetPolicy = org.mapstruct.ReportingPolicy.IGNORE,
         uses = {UserAccountMapper.class, ProductMapper.class})

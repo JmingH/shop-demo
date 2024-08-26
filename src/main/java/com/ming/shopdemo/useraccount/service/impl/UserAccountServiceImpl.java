@@ -10,7 +10,6 @@ import com.ming.shopdemo.useraccount.model.mapper.UserAccountMapper;
 import com.ming.shopdemo.useraccount.repository.UserAccountRepository;
 import com.ming.shopdemo.useraccount.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
