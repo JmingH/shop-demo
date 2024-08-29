@@ -11,7 +11,7 @@ public interface ProductService {
 
     ProductDto findProductById(Long id);
 
-    Page<ProductDto> findAllProductList(Pageable pageable);
+    Page<ProductDto> findAllProductList(String name,Pageable pageable);
 
     void updateProductById(Long id, EditProductRequest request);
 

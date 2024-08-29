@@ -34,8 +34,9 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ProductDto>> getProductList(@PageableDefault(size = 10, sort = {"name"}) Pageable pageable) {
-        return ResponseEntity.ok(productService.findAllProductList(pageable));
+    public ResponseEntity<Page<ProductDto>> getProductList(@RequestParam(required = false) String name,
+                                                           @PageableDefault(size = 10, sort = {"name"}) Pageable pageable) {
+        return ResponseEntity.ok(productService.findAllProductList(name, pageable));
     }
 
     @PreAuthorize("hasRole('ADMIN')")

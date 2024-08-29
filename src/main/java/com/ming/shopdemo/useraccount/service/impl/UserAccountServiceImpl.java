@@ -54,7 +54,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     @Override
-    public Page<UserAccountDto> findAllUserAccount(Pageable pageable) {
-        return accountRepository.findAll(pageable).map(accountMapper::toDto);
+    public Page<UserAccountDto> findAllUserAccount(String username, Pageable pageable) {
+        return accountRepository.findAllByUsernameIsContainingIgnoreCase(username, pageable).map(accountMapper::toDto);
     }
 }

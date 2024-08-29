@@ -12,5 +12,5 @@ public interface UserAccountService {
 
     UserAccountDto findByUuid(UUID username);
 
-    Page<UserAccountDto> findAllUserAccount(Pageable pageable);
+    Page<UserAccountDto> findAllUserAccount(String username, Pageable pageable);
 }
