@@ -17,7 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-@Table(name = "prodcut")
+@Table(name = "product")
 public class Product {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)

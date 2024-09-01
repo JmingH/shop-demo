@@ -48,7 +48,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     @Override
     public UserAccountDto findByUuid(UUID uuid) {
-        UserAccount account = accountRepository.findByUuid(uuid)
+        UserAccount account = accountRepository.findById(uuid)
                 .orElseThrow(() -> new NotFoundException("User not found!"));
         return accountMapper.toDto(account);
     }
