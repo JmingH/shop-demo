@@ -43,12 +43,12 @@ public class CartServiceImpl implements CartService {
         Product product = productMapper.toEntity(productDto);
 
         // check CartItem exists
-        CartItem cartItem = cartItemRepository.findByCartAndProduct(cart, product)
+        CartItem cartItem = cartItemRepository.findByCartIdAndProductId(cart.getId(), product.getId())
                 .orElse(CartItem.builder().cart(cart).product(product).quantity(0).build());
 
+        // check stock enough
         int newQuantity = cartItem.getQuantity() + quantity;
 
-        // check stock enough
         if (newQuantity > product.getStock()) {
             throw new InvalidArgumentException("stock is not enough. stock is " + product.getStock());
         }
@@ -63,7 +63,8 @@ public class CartServiceImpl implements CartService {
         Cart cart = userAccount.getCart();
 
         if (cart == null) {
-            return new CartDto(null, null, null);
+            createCart(userAccount);
+            cart = userAccount.getCart();
         }
 
         return cartMapper.toDto(cart, userAccount);
