@@ -29,7 +29,6 @@ extra["jjwtVersion"] = "0.12.5"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-security")
-	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
@@ -41,16 +40,17 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	testRuntimeOnly("com.h2database:h2")
 
-	// Mapstruct
-	implementation ("org.mapstruct:mapstruct:${property("mapstructVersion")}")
-	annotationProcessor("org.mapstruct:mapstruct-processor:${property("mapstructVersion")}")
-	// Lombok Mapstruct Binding
-	annotationProcessor("org.projectlombok:lombok-mapstruct-binding:${property("lombokMapstructBindingVersion")}")
-	// jjwt
-	implementation("io.jsonwebtoken:jjwt:${property("jjwtVersion")}")
+    // Mapstruct
+    implementation("org.mapstruct:mapstruct:${property("mapstructVersion")}")
+    annotationProcessor("org.mapstruct:mapstruct-processor:${property("mapstructVersion")}")
+    // Lombok Mapstruct Binding
+    annotationProcessor("org.projectlombok:lombok-mapstruct-binding:${property("lombokMapstructBindingVersion")}")
+    // jjwt
+    implementation("io.jsonwebtoken:jjwt:${property("jjwtVersion")}")
 }
 
 tasks.withType<Test> {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
