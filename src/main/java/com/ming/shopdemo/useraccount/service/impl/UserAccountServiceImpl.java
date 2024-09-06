@@ -9,6 +9,7 @@ import com.ming.shopdemo.useraccount.model.dto.UserAccountDto;
 import com.ming.shopdemo.useraccount.model.mapper.UserAccountMapper;
 import com.ming.shopdemo.useraccount.repository.UserAccountRepository;
 import com.ming.shopdemo.useraccount.service.UserAccountService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,6 +28,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     private final PasswordEncoder passwordEncoder;
 
+    @Transactional
     @Override
     public void createUserAccount(RegisterRequest request) {
         boolean isUsernameExist = accountRepository.existsByUsername(request.username());
