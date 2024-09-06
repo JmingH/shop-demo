@@ -8,6 +8,7 @@ import com.ming.shopdemo.product.model.dto.ProductDto;
 import com.ming.shopdemo.product.model.mapper.ProductMapper;
 import com.ming.shopdemo.product.repository.ProductRepository;
 import com.ming.shopdemo.product.service.ProductService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +22,7 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductMapper productMapper;
 
+    @Transactional
     @Override
     public void createProduct(CreateProductRequest request) {
         Product product = productMapper.toEntity(request);
@@ -39,6 +41,7 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findAllByNameIsContainingIgnoreCase(name, pageable).map(productMapper::toDto);
     }
 
+    @Transactional
     @Override
     public void updateProductById(Long id, EditProductRequest request) {
         if (!productRepository.existsById(id)) {
@@ -51,6 +54,7 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(product);
     }
 
+    @Transactional
     @Override
     public void deleteProductById(Long id) {
         productRepository.deleteById(id);
