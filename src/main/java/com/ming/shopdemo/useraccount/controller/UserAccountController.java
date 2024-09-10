@@ -36,7 +36,7 @@ public class UserAccountController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
-    public ResponseEntity<Page<UserAccountDto>> getAllUserAccount(@RequestParam(required = false) String username,
+    public ResponseEntity<Page<UserAccountDto>> getAllUserAccount(@RequestParam(required = false, defaultValue = "")  String username,
                                                                   @PageableDefault(size = 5, sort = {"username"}) Pageable pageable) {
         Page<UserAccountDto> userList = accountService.findAllUserAccount(username, pageable);
         return ResponseEntity.ok(userList);
