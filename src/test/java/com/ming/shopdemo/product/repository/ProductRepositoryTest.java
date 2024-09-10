@@ -37,7 +37,7 @@ class ProductRepositoryTest {
     void givenInvalidNameAndPageable_whenFindAllProduct_thenReturnEmptyPage() {
         Sort sort = Sort.by(Sort.Direction.ASC, "name");
         Pageable pageable = PageRequest.of(0, 5, sort);
-        String productName = "@#$%^&*()";
+        String productName = null;
 
         Page<Product> products = productRepository.findAllByNameIsContainingIgnoreCase(productName, pageable);
 
