@@ -26,11 +26,11 @@ public class SecurityFilterChainConfig {
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/api/users/register", "/api/auth/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/products/*", "/api/products").permitAll()
-                        .requestMatchers(HttpMethod.OPTIONS, "/api/products/*", "/api/products").permitAll()
+                        .requestMatchers(HttpMethod.OPTIONS, "/api/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // No sessions
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
